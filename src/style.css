@@ -146,6 +146,9 @@ main{
         max-width: 291px;
         padding-inline: 1.5%;
     }
+    .title {
+    font-size: 1.4rem;
+    }
     .project-form{
         justify-content: space-around;
         width: 100%;
