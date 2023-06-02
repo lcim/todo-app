@@ -61,6 +61,7 @@ main{
     background-color: #B9FAEF;
     border-radius: 0.5rem;
     font-weight: bold;
+    width: 100%;
 }
 
 .project-form {
@@ -106,7 +107,6 @@ main{
     text-align: left;
     /* rgba(33, 42, 62, 0.6) rgba(136, 74, 57, 0.6) */
 }
-
 
 .fa-icon-tr{
     cursor: pointer;
