@@ -57,6 +57,11 @@ main{
     /* display: flex;
     flex-direction: column; */
 }
+.projects-container input[type="text"] {
+    background-color: #B9FAEF;
+    border-radius: 0.5rem;
+    font-weight: bold;
+}
 
 .project-form {
     border: 1px solid aquamarine;
@@ -94,13 +99,14 @@ main{
 .project-not-completed, .project-completed {
     display: flex;
     background-color: rgba(33, 42, 62, 0.7); 
-    justify-content: space-between;   
+    justify-content: space-between;
     align-items: center;
     font-size: 1.1rem;
     padding: 0.15rem 0 0.15rem 0.5rem;
     text-align: left;
     /* rgba(33, 42, 62, 0.6) rgba(136, 74, 57, 0.6) */
 }
+
 
 .fa-icon-tr{
     cursor: pointer;
