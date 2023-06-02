@@ -60,12 +60,11 @@ main{
 
 .project-form {
     border: 1px solid aquamarine;
-    padding: 0.2rem ;
+    padding: 0.2rem 0.5rem;
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
     display: flex;
     gap: 1px;
-    justify-content: space-around;
 }
 .project-form input {
     background: none;
@@ -85,6 +84,8 @@ main{
     border-radius: 0.5rem;
     font-size: 1.9rem;
     line-height: 1.9rem;
+    padding: 0;
+    margin-inline-start: 0.3rem;
     cursor: pointer;
     background-color: aquamarine;
 }
@@ -135,8 +136,15 @@ main{
  /* extra small smart phones */
 @media screen and (min-width: 300px){
     main {
-        max-width: 288px;
+        max-width: 291px;
+        padding-inline: 1.5%;
     }
+    .project-form{
+        justify-content: space-around;
+    }
+    /* .projects-container{
+
+    } */
 }
 
  /* wider smart phones */
