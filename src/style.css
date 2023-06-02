@@ -11,7 +11,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-inline: 5%;
+    padding-inline: 5%; 
+    flex-direction: column;
 }
 
 main{
@@ -140,6 +141,38 @@ main{
     text-decoration: line-through;
 }
 
+.socials {
+    background-color: aquamarine;
+    width: 80vw;
+    min-width: 280px;
+    max-width: 650px;
+    border-radius: 0.2rem;
+    padding: 0.1rem 0.3rem;
+    display: flex;
+    flex-direction: column;
+    margin-block-start: 0.5rem;
+}
+.fa-icons, .connect-copyrights{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    height: 1.4rem;
+}
+
+.fa-icons [class*="fa-"] {
+    color: #00acee;
+    font-size: 1.3rem;
+}
+.socials hr {
+    margin: 0.3rem;
+    color: #000111;
+}
+.connect-copyrights {
+    height: 1.2rem;
+}
+
  /* extra small smart phones */
 @media screen and (min-width: 300px){
     main {
@@ -212,6 +245,7 @@ main{
     main {
         max-height: 420px;
         width: 100%;
+        min-height: unset;
     }
     .title {
         font-size: 1.6rem;
