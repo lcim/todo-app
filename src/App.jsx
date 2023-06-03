@@ -55,6 +55,7 @@ function App() {
   const intro = <p>&quot;What&apos;s your schedule for the day/week/month/year? Add them here and we will help you keep track.&quot;</p>
 
   return (
+    <div className="container">
     <main>
       <h1 className="title">Simple Scheduler</h1>
       {progress === 100 && <Confetti />}
@@ -74,7 +75,9 @@ function App() {
       </div>
       {/* Instead of passing key, project and completed to ProjectTasks, one can simply pass the projects destructured i.e: {...proj} */}
       
-    </main>
+      </main>
+      {/* <div className="my-contacts">{contactMe}</div> */}
+    </div>
   )
 }
 

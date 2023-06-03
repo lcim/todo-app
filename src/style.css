@@ -1,12 +1,18 @@
 * {
     box-sizing: border-box;
 }
+
 body {
     background-image: url("./assets/stars.png");
     background-color: #000111;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    height: auto;
+    
+}
+
+.container {
     height: 100vh;
     display: flex;
     align-items: center;
@@ -16,7 +22,7 @@ body {
 }
 
 main{
-    margin: auto;
+    /* margin: auto; */
     background-color:rgba(11, 36, 71, 0.8);
     border-radius: 0.7rem;
     padding: 1.0rem;
@@ -24,9 +30,17 @@ main{
     text-align: center;
     border: 1px solid aquamarine;
     min-height: 460px;
-    overflow-y: hidden;
+    overflow: auto;
+    height: auto;
+    margin-bottom: 0;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 0; */
 }
-
+.my-contacts {
+    margin-top: 0;
+}
 .title {
     font-family: 'Merienda', cursive;
     font-size: 1.9rem;
@@ -35,7 +49,7 @@ main{
 }
 
 .task-progress, .task-progress-message {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     padding-inline: 10%;
     font-family: 'EB Garamond', serif;
 }
@@ -43,7 +57,7 @@ main{
     margin-block-start: 0;
     font-style: italic;
     font-size: 1.0rem;
-    margin-block-end: 0.4rem;
+    margin-block-end: 0.3rem;
 }
 
 ::placeholder{
@@ -76,6 +90,7 @@ main{
     border-top-right-radius: 1rem;
     display: flex;
     gap: 1px;
+    overflow-y: auto;
 }
 .project-form input {
     background: none;
@@ -155,23 +170,27 @@ main{
     display: flex;
     flex-direction: column;
     margin-block-start: 0.5rem;
+    margin-inline: auto;
+    color: #000111;
+    margin-bottom: min(1.2rem, 3rem, 6rem);
 }
+
 .fa-icons, .connect-copyrights{
     display: flex;
     justify-content: space-around;
     align-items: center;
     border-radius: 0.5rem;
     padding: 0.5rem;
-    height: 1.4rem;
+    height: 1.3rem;
 }
 
 .fa-icons [class*="fa-"] {
     color: #00acee;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
 }
 .socials hr {
-    margin: 0.3rem;
-    color: #000111;
+    margin-bottom: 0.3rem;
+    color: aquamarine;
 }
 .connect-copyrights {
     height: 1.2rem;
@@ -182,9 +201,10 @@ main{
     main {
         max-width: 291px;
         padding-inline: 1.5%;
+        height: auto;
     }
     .title {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     }
     .project-form{
         justify-content: space-around;
@@ -198,19 +218,19 @@ main{
  /* wider smart phones */
 @media screen and (min-width: 481px)  {
     .title {
-        font-size: 2.3rem;
+        font-size: 1.3rem;
     }
     .task-progress, .task-progress-message {
         font-size: 1.3rem;
     }
     .project-title{
-        font-size: 1.3rem;
+        font-size: 1.4rem;
     }
     .modification-icons {
         gap: 4px;
     }
     .fa-icon-sq, .fa-icon-sqc, .fa-icon-tr{
-        font-size: 30px;
+        font-size: 24px;
     }
 }
 
@@ -219,23 +239,31 @@ main{
     main {
         width: 650px;
         max-width: 800px;
+        height: auto;
     }
     .title {
         font-size: 2.6rem;
     }
+    /* .task-progress{
+        font-size: unset;
+        margin-bottom: unset;
+    } */
     .task-progress, .task-progress-message {
-        font-size: 1.6rem;
+        font-size: 1.2rem;
     }
     ::placeholder {
         font-size: 1.3rem;
     }
     .project-title{
-        font-size: 1.4rem;
+        font-size: 1.5rem;
         padding-right: 0.6rem;
     }
     .modification-icons {
         gap: 6px;
         padding-right: 0.6rem;
+    }
+    .connect-copyrights {
+        font-size: 0.9rem;
     }
     .fa-icon-sq, .fa-icon-sqc, .fa-icon-tr{
         font-size: 30px;
@@ -252,14 +280,15 @@ main{
         min-height: unset;
     }
     .title {
-        font-size: 1.6rem;
+        font-size: 1.7rem;
         margin: 0.1rem;
         padding-inline: 2%;
     }
     .task-progress, .task-progress-message {
-        font-size: 1.0rem;
+        font-size: 1.3rem;
         margin: 0.1rem;
         padding-inline: 2%;
+        margin-bottom: 0.3rem;
     }
     .project-form {
         height: 1.7rem;
