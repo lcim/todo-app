@@ -12,7 +12,7 @@ export default function Door({opened, openClose}) {
             <div className="right-door">
                 <p className="rt-door">Right Door</p>            
                 <button className="btn-closeOpen" onClick={() => openClose()}>
-                <img src={`./src/assets/${openStatus}.png`} alt="Door handle icon" className="door-handle" />Click Here
+                <img src={`/src/assets/${openStatus}.png`} alt="Door handle icon" className="door-handle" />Click Here
                 </button>
             </div>
         </div>
