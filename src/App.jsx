@@ -4,12 +4,24 @@ import ProjectForm from './ProjectForm'
 import ProjectTasks from './ProjectTasks'
 import Confetti from './Confetti'
 import Footer from './Footer'
+import Door from "./Door"
+import $ from "jquery";
 
 function App() {
   const [projects, setProjects] = useState(JSON.parse(localStorage.getItem("stored-projects")) || [])
 
-  // localStorage.clear()
+  const [opened, setOpened] = useState(false)
+  
   useEffect((() => localStorage.setItem("stored-projects", JSON.stringify(projects))), [projects])
+
+  const handleOpened = () => {
+    setOpened(prevStatus => !prevStatus)
+    // const rightDoor = $(".right-door");
+    $(".right-door").delay(100).fadeTo(4000, 0.005);
+    // const leftDoor = $(".left-door");
+    $(".left-door").delay(100).fadeTo(4000, 0.005)
+    // console.log("HelloooooooOOOOO")
+  }
 
   // This creates a task
   const addProject = (projectName) => {
@@ -57,6 +69,7 @@ function App() {
 
   return (
     <div className="container">
+      <Door opened={opened} openClose={ () => handleOpened() } />
     <main>
       <h1 className="title">Simple Scheduler</h1>
       {progress === 100 && <Confetti />}

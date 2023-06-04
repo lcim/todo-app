@@ -11,6 +11,62 @@ body {
     height: auto;
     
 }
+.door-container {
+    display: flex;
+    align-items: center;
+    place-content: center;
+    position: absolute;
+}
+.right-door, .left-door {
+    width: 50vw;
+    height: 100vh;
+    font-size: 1.3rem;
+    border-left: 4px solid;
+    color: #EED;
+    background-color: rgba(72, 33, 33, 0.9);
+}
+.left-door{
+    border-right: 4px solid brown;
+    animation: 3s slide-left;
+}
+@keyframes slide-left {
+  from {
+    margin-right: -100%;
+  }
+  to {
+    margin-right: 0%;
+  }
+}
+.right-door {
+  animation: 3s slide-right;
+}
+@keyframes slide-right {
+  from {
+    margin-left: -100%;
+  }
+  to {
+    margin-right: 0%;
+  }
+}
+.rt-door, .lt-door {
+    position: relative;
+    top: 40%;
+    font-weight: bolder;
+}
+.lt-door {
+    left: 41%;
+}
+.rt-door{
+    left: 9%;
+}
+
+.btn-closeOpen img, .btn-closeOpen {
+    width: 100%;
+    margin-left: -17vw;
+    background: none;
+    border: none;
+    /* background-color: gray; */
+}
 
 .container {
     height: 100vh;
