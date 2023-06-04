@@ -1,9 +1,9 @@
 
 import { PropTypes } from "prop-types";
 
-export default function Door({opened, openClose}) {
-    console.log(opened)
-    // const openStatus = opened ? "hide" : "show";
+export default function Door({opened, open, close}) {
+    // console.log(opened)
+    // const openStatus = opened ? true : false;
     return (
         <div className="door-container">
             <div className="left-door">
@@ -11,8 +11,10 @@ export default function Door({opened, openClose}) {
             </div>
             <div className="right-door">
                 <p className="rt-door">Right Door</p>            
-                <button className="btn-closeOpen" onClick={() => openClose()}>Click Here
-                </button>
+                <button className="btn-open" onClick={() => open()}>Show schedule
+                </button> 
+                { open && <button className="btn-close" onClick={() => close()}>Hide schedule
+                </button>}
             </div>
         </div>
     )

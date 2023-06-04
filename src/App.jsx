@@ -17,10 +17,18 @@ function App() {
   const handleOpened = () => {
     setOpened(prevStatus => !prevStatus)
     // const rightDoor = $(".right-door");
-    $(".right-door").delay(100).fadeTo(4000, 0.005);
+    $(".right-door").animate({right: "0", width: "toggle"}, {duration: 3000, easing: "linear"});
     // const leftDoor = $(".left-door");
-    $(".left-door").delay(100).fadeTo(4000, 0.005)
+    $(".left-door").animate({width: "toggle"}, {duration: 3000, easing: "linear"});
+    // $(".btn-close").show()
     // console.log("HelloooooooOOOOO")
+  }
+    const handleClosed = () => {
+    setOpened(prevStatus => !prevStatus)
+    // $(".right-door").animate({right: "0", width: "toggle"}, {duration: 3000, easing: "linear"});
+    // $(".left-door").animate({width: "toggle"}, {duration: 3000, easing: "linear"});
+    // $(".btn-close").toggle()
+      window.location.reload()
   }
 
   // This creates a task
@@ -69,7 +77,7 @@ function App() {
 
   return (
     <div className="container">
-      <Door opened={opened} openClose={ () => handleOpened() } />
+      <Door opened={opened} open={() => handleOpened()} close={() => handleClosed()} />      
     <main>
       <h1 className="title">Simple Scheduler</h1>
       {progress === 100 && <Confetti />}

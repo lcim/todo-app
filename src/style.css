@@ -54,18 +54,30 @@ body {
     font-weight: bolder;
 }
 .lt-door {
-    left: 41%;
+    left: 20vw
 }
 .rt-door{
-    left: 9%;
+    left: min(5%, 50vw);
 }
 
-.btn-closeOpen img, .btn-closeOpen {
+.btn-open img, .btn-open, .btn-close {
     width: 100%;
     margin-left: -17vw;
     background: none;
     border: none;
     /* background-color: gray; */
+}
+.btn-open{
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    background-color: #EED;
+}
+.btn-close {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background-color: #EED;
 }
 
 .container {
