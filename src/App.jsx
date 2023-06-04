@@ -3,6 +3,7 @@ import { useState , useEffect} from 'react'
 import ProjectForm from './ProjectForm'
 import ProjectTasks from './ProjectTasks'
 import Confetti from './Confetti'
+import Footer from './Footer'
 
 function App() {
   const [projects, setProjects] = useState(JSON.parse(localStorage.getItem("stored-projects")) || [])
@@ -73,12 +74,13 @@ function App() {
         />
       )}
       </div>
-      {/* Instead of passing key, project and completed to ProjectTasks, one can simply pass the projects destructured i.e: {...proj} */}
       
       </main>
-      {/* <div className="my-contacts">{contactMe}</div> */}
+      <Footer />
     </div>
   )
 }
+{/* Instead of passing key, project and completed to ProjectTasks, one can simply pass the projects destructured i.e: {...proj} */}
+      
 
 export default App
