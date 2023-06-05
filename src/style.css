@@ -23,7 +23,7 @@ body {
     font-size: 1.3rem;
     border-left: 4px solid;
     color: #EED;
-    background-color: rgba(72, 33, 33, 0.9);
+    background-color: rgba(72, 33, 33, 0.975);
 }
 .left-door{
     border-right: 4px solid brown;
@@ -54,7 +54,7 @@ body {
     font-weight: bolder;
 }
 .lt-door {
-    left: 20vw
+    left: 16vw;
 }
 .rt-door{
     left: min(5%, 50vw);
@@ -75,9 +75,9 @@ body {
     width: 25vw;    
     border-radius: 9px;
     background-color: #EED;
-    box-shadow: 0 0 3px 2px #9C6E7F;
+    box-shadow: 0 0 3px 2px #BE9FAF;
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1.0rem;
 }
 .btn-close {
     position: unset;
@@ -339,11 +339,11 @@ main{
 /* Small devices upwards */
 @media screen and (min-width: 768px)  {
     .btn-open, .btn-close{
-        width: 12vw;
-        right: 35vw;
+        width: 18vw;
+        right: 27vw;
     }
     .lt-door {
-        left: 40vw;
+        left: 30vw;
     }
     main {
         width: 650px;
@@ -425,5 +425,11 @@ main{
     }
     .fa-icon-sq, .fa-icon-sqc, .fa-icon-tr{
         font-size: 15px;
+    }
+}
+
+@media screen and (min-width: 1024px)  {
+    .lt-door{
+        left: 40vw;
     }
 }
