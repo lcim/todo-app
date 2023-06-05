@@ -12,9 +12,7 @@ export default function Door({opened, open, close}) {
             <div className="right-door">
                 <p className="rt-door">Right Door</p>            
                 <button className="btn-open" onClick={() => open()}>Show schedule
-                </button> 
-                { open && <button className="btn-close" onClick={() => close()}>Hide schedule
-                </button>}
+                </button>                 
             </div>
         </div>
     )

@@ -67,18 +67,35 @@ body {
     border: none;
     /* background-color: gray; */
 }
-.btn-open{
+.btn-open, .btn-close{
     position: absolute;
     top: 50%;
-    right: 10%;
+    right: 20%;
+    height:  7vh;
+    width: 25vw;    
+    border-radius: 9px;
     background-color: #EED;
+    box-shadow: 0 0 3px 2px #9C6E7F;
+    font-weight: bold;
+    font-size: 1.2rem;
 }
 .btn-close {
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-    background-color: #EED;
+    position: unset;
+    background-color: rgba(127, 255, 212, 0.5);
+    color: #EEE;
+    float: left;
+    margin: 3% 6%;
 }
+
+/* 
+.joke {
+    width: 50vw;
+    height: 100vh;
+    background-color: yellow;
+    position: absolute;
+    z-index: 3;
+    translate: -10vw 0px;
+} */
 
 .container {
     height: 100vh;
@@ -204,7 +221,7 @@ main{
     /* #7C9070; #79E0EE */
 }
 .fa-icon-sq, .fa-icon-sqc {
-    color: rgba(127, 255, 212, 0.9) ;
+    color: rgba(127, 255, 212, 0.9);
     cursor: pointer;
     padding: 0;
     margin: 0;
@@ -321,6 +338,13 @@ main{
 
 /* Small devices upwards */
 @media screen and (min-width: 768px)  {
+    .btn-open, .btn-close{
+        width: 12vw;
+        right: 35vw;
+    }
+    .lt-door {
+        left: 40vw;
+    }
     main {
         width: 650px;
         max-width: 800px;

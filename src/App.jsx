@@ -20,11 +20,11 @@ function App() {
     $(".right-door").animate({right: "0", width: "toggle"}, {duration: 3000, easing: "linear"});
     // const leftDoor = $(".left-door");
     $(".left-door").animate({width: "toggle"}, {duration: 3000, easing: "linear"});
-    // $(".btn-close").show()
-    // console.log("HelloooooooOOOOO")
+    $(".btn-close").show()
+    console.log({opened})
   }
     const handleClosed = () => {
-    setOpened(prevStatus => !prevStatus)
+    // setOpened(prevStatus => !prevStatus)
     // $(".right-door").animate({right: "0", width: "toggle"}, {duration: 3000, easing: "linear"});
     // $(".left-door").animate({width: "toggle"}, {duration: 3000, easing: "linear"});
     // $(".btn-close").toggle()
@@ -77,7 +77,10 @@ function App() {
 
   return (
     <div className="container">
-      <Door opened={opened} open={() => handleOpened()} close={() => handleClosed()} />      
+      <Door opened={opened} open={() => handleOpened()} close={() => handleClosed()} />
+      {/* <div className="joke">
+
+      </div> */}
     <main>
       <h1 className="title">Simple Scheduler</h1>
       {progress === 100 && <Confetti />}
@@ -94,7 +97,9 @@ function App() {
           editProject={(proj) => editProject(proj, index)}
         />
       )}
-      </div>
+      </div> 
+      { opened && <button className="btn-close" onClick={() => handleClosed()}>Hide schedule
+      </button>}
       
       </main>
       <Footer />
