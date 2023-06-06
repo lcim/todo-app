@@ -1,9 +1,8 @@
 
 import { PropTypes } from "prop-types";
 
-export default function Door({opened, open, close}) {
-    // console.log(opened)
-    // const openStatus = opened ? true : false;
+export default function Door({ open}) {
+
     return (
         <div className="door-container">
             <div className="left-door">

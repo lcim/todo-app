@@ -14,22 +14,7 @@ function App() {
   
   useEffect((() => localStorage.setItem("stored-projects", JSON.stringify(projects))), [projects])
 
-  const handleOpened = () => {
-    setOpened(prevStatus => !prevStatus)
-    // const rightDoor = $(".right-door");
-    $(".right-door").animate({right: "0", width: "toggle"}, {duration: 3000, easing: "linear"});
-    // const leftDoor = $(".left-door");
-    $(".left-door").animate({width: "toggle"}, {duration: 3000, easing: "linear"});
-    $(".btn-close").show()
-    console.log({opened})
-  }
-    const handleClosed = () => {
-    // setOpened(prevStatus => !prevStatus)
-    // $(".right-door").animate({right: "0", width: "toggle"}, {duration: 3000, easing: "linear"});
-    // $(".left-door").animate({width: "toggle"}, {duration: 3000, easing: "linear"});
-    // $(".btn-close").toggle()
-      window.location.reload()
-  }
+  
 
   // This creates a task
   const addProject = (projectName) => {
@@ -74,13 +59,34 @@ function App() {
           numOfProjectsCompleted > 0 && "Nice! Keep riding higher 🚴‍♀️");
     
   const intro = <p>&quot;What&apos;s your schedule for the day/week/month/year? Add them here and we will help you keep track.&quot;</p>
+  
+  const handleOpened = () => {    
+    setOpened(true)
+    { !opened && $(".right-door").addClass("joked") }
+    { !opened && $(".left-door").addClass("jayed") }
+    // $(".btn-open").hide()
+    $(".btn-close").show()
+    // console.log(opened)
+  }
+  const handleClosed = () => {
+      // window.location.reload()
+      { opened && $(".right-door").addClass("unjoked") } 
+    { opened && $(".left-door").addClass("unjayed") }
+    $(".btn-close").hide()
+    $(".btn-open").show()
+    setOpened(false)
+    setTimeout(function(){
+   window.location.reload();
+}, 4000);
+  }
+ 
 
   return (
     <div className="container">
       <Door opened={opened} open={() => handleOpened()} close={() => handleClosed()} />
-      {/* <div className="joke">
-
-      </div> */}
+      {/* <div className="joke" onClick={() => openDoors()}></div>
+      <div className="jay" onClick={() => openDoors()}></div> */}
+      
     <main>
       <h1 className="title">Simple Scheduler</h1>
       {progress === 100 && <Confetti />}
@@ -98,7 +104,7 @@ function App() {
         />
       )}
       </div> 
-      { opened && <button className="btn-close" onClick={() => handleClosed()}>Hide schedule
+      { <button className="btn-close" onClick={() => handleClosed()}>Hide schedule
       </button>}
       
       </main>

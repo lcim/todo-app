@@ -17,7 +17,7 @@ body {
     place-content: center;
     position: absolute;
 }
-.right-door, .left-door {
+/* .right-door, .left-door {
     width: 50vw;
     height: 100vh;
     font-size: 1.3rem;
@@ -28,7 +28,16 @@ body {
 .left-door{
     border-right: 4px solid brown;
     animation: 3s slide-left;
-}
+} */
+
+/* .jokers {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+} */
+/* 
 @keyframes slide-left {
   from {
     margin-right: -100%;
@@ -47,7 +56,54 @@ body {
   to {
     margin-right: 0%;
   }
+} */
+.right-door {
+    width: 50vw;
+    height: 100vh;
+    background-color: rgba(72, 33, 33, 0.975);
+    color: #EED;
+    position: absolute;
+    border-left: 4px solid;
+    left: 0;
+    z-index: 3;
+    transition-property: left;
+    transition-duration: 3s;
+    transition-delay: 1s;
+    transition-timing-function: linear; 
+    /* or ease */
 }
+.left-door {
+    width: 50vw;
+    height: 100vh;    
+    position: absolute;
+    z-index: 3;
+    border-right: 4px solid brown;
+    background-color: rgba(72, 33, 33, 0.975);
+    color: #EED;
+    right: 0;
+    transition-property: right;
+    transition-duration: 3s;
+    transition-delay: 1s;
+    transition-timing-function: linear; 
+    /* or ease */
+}
+
+.joked {
+    left: 50vw;    
+}
+.jayed {
+    right: 50vw;    
+}
+
+.unjoked {
+    left: 0;    
+}
+.unjayed {
+    right: 0;    
+}
+
+
+
 .rt-door, .lt-door {
     position: relative;
     top: 40%;
@@ -86,16 +142,6 @@ body {
     float: left;
     margin: 3% 6%;
 }
-
-/* 
-.joke {
-    width: 50vw;
-    height: 100vh;
-    background-color: yellow;
-    position: absolute;
-    z-index: 3;
-    translate: -10vw 0px;
-} */
 
 .container {
     height: 100vh;
