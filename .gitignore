@@ -12,6 +12,10 @@ dist
 dist-ssr
 *.local
 
+# personally created files
+junk.txt
+clean-up.txt
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

@@ -1,0 +1,40 @@
+/* .right-door, .left-door {
+    width: 50vw;
+    height: 100vh;
+    font-size: 1.3rem;
+    border-left: 4px solid;
+    color: #EED;
+    background-color: rgba(72, 33, 33, 0.975);
+}
+.left-door{
+    border-right: 4px solid brown;
+    animation: 3s slide-left;
+} */
+
+/* .jokers {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+} */
+/* 
+@keyframes slide-left {
+  from {
+    margin-right: -100%;
+  }
+  to {
+    margin-right: 0%;
+  }
+}
+.right-door {
+  animation: 3s slide-right;
+}
+@keyframes slide-right {
+  from {
+    margin-left: -100%;
+  }
+  to {
+    margin-right: 0%;
+  }
+} */

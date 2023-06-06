@@ -1,7 +1,7 @@
 
 import { PropTypes } from "prop-types";
 
-export default function Door({ open}) {
+export default function Door({open}) {
 
     return (
         <div className="door-container">
@@ -17,6 +17,6 @@ export default function Door({ open}) {
     )
 }
 Door.protoTypes = {
-    opened: PropTypes.bool,
-    openClose: PropTypes.func,
+    // opened: PropTypes.bool,
+    open: PropTypes.func,
 }

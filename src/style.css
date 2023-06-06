@@ -9,54 +9,16 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     height: auto;
-    
+    margin: 0;    
 }
+/* Box for the two sliding doors, left-door and right-door */
 .door-container {
     display: flex;
     align-items: center;
     place-content: center;
     position: absolute;
 }
-/* .right-door, .left-door {
-    width: 50vw;
-    height: 100vh;
-    font-size: 1.3rem;
-    border-left: 4px solid;
-    color: #EED;
-    background-color: rgba(72, 33, 33, 0.975);
-}
-.left-door{
-    border-right: 4px solid brown;
-    animation: 3s slide-left;
-} */
 
-/* .jokers {
-    position: absolute;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-} */
-/* 
-@keyframes slide-left {
-  from {
-    margin-right: -100%;
-  }
-  to {
-    margin-right: 0%;
-  }
-}
-.right-door {
-  animation: 3s slide-right;
-}
-@keyframes slide-right {
-  from {
-    margin-left: -100%;
-  }
-  to {
-    margin-right: 0%;
-  }
-} */
 .right-door {
     width: 50vw;
     height: 100vh;
@@ -88,9 +50,11 @@ body {
     /* or ease */
 }
 
+/* Action to open right door */
 .right-open {
     left: 50vw;   /* 50vw from the left reference point; not really moving in left direction*/
 }
+/* Action to open left door */
 .left-open {
     right: 50vw; /* 50vw from the right reference point; not really moving in rightwards*/
 }
@@ -102,8 +66,7 @@ body {
     right: 0;    
 }
 
-
-
+/* The right and left doors paragraph elements */
 .rt-door, .lt-door {
     position: relative;
     top: 40%;
@@ -116,12 +79,12 @@ body {
     left: min(5%, 50vw);
 }
 
+/* Buttons used to operate the doors */
 .btn-open img, .btn-open, .btn-close {
     width: 100%;
     margin-left: -17vw;
     background: none;
     border: none;
-    /* background-color: gray; */
 }
 .btn-open, .btn-close{
     position: absolute;
@@ -143,6 +106,7 @@ body {
     margin: 3% 6%;
 }
 
+/* App container */
 .container {
     height: 100vh;
     display: flex;
@@ -164,14 +128,13 @@ main{
     overflow: auto;
     height: auto;
     margin-bottom: 0;
-    /* display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding-bottom: 0; */
+
 }
 .my-contacts {
     margin-top: 0;
 }
+
+/* App title */
 .title {
     font-family: 'Merienda', cursive;
     font-size: 1.9rem;
@@ -191,9 +154,6 @@ main{
     margin-block-end: 0.9rem;
 }
 
-::placeholder{
-    color: aquamarine;
-}
 .projects-container {
     background-image: url("./assets/landscape3.png");
     background-size: cover;
@@ -204,9 +164,8 @@ main{
     border-bottom-right-radius: 1rem;
     border: 1px solid aquamarine;
     font-size: 1.05rem;
-    /* display: flex;
-    flex-direction: column; */
 }
+
 .projects-container input[type="text"] {
     background-color: #B9FAEF;
     border-radius: 0.5rem;
@@ -214,6 +173,12 @@ main{
     width: 100%;
 }
 
+/* Input placeholder */
+::placeholder{
+    color: aquamarine;
+}
+
+/* Form  */
 .project-form {
     border: 1px solid aquamarine;
     padding: 0.2rem 0.5rem;
@@ -250,6 +215,7 @@ main{
     color: aquamarine;
 }
 
+/* Edit mode styling  */
 .project-not-completed, .project-completed {
     display: flex;
     background-color: rgba(33, 42, 62, 0.7); 
@@ -261,11 +227,19 @@ main{
     /* rgba(33, 42, 62, 0.6) rgba(136, 74, 57, 0.6) */
 }
 
+.project-completed {
+    color: rgb(185, 237, 221, 0.5) ;
+    text-decoration: line-through;
+}
+
+/* FontAwesome trash icon */
 .fa-icon-tr{
     cursor: pointer;
     color: rgba(127, 255, 212, 0.6) ;
     /* #7C9070; #79E0EE */
 }
+
+/* FontAwesome square and squareChecked icons */
 .fa-icon-sq, .fa-icon-sqc {
     color: rgba(127, 255, 212, 0.9);
     cursor: pointer;
@@ -279,18 +253,16 @@ main{
     color: rgb(185, 237, 221, 0.5)  ;
     border: 1px solid rgb(185, 237, 221, 0.5);
 }
+
+/* Toggle complete icons */
 .modification-icons {
     display: flex;
     gap: 3px;
     padding-right: 0.3rem;
 }
+
 .project-title {
     flex-grow: 1;
-}
-
-.project-completed {
-    color: rgb(185, 237, 221, 0.5) ;
-    text-decoration: line-through;
 }
 
 /* Footer section */
@@ -399,10 +371,7 @@ main{
     .title {
         font-size: 2.6rem;
     }
-    /* .task-progress{
-        font-size: unset;
-        margin-bottom: unset;
-    } */
+
     .task-progress, .task-progress-message {
         font-size: 1.2rem;
     }

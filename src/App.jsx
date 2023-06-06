@@ -7,21 +7,33 @@ import Footer from './Footer'
 import Door from "./Door"
 import $ from "jquery";
 
+/* 
+This App is a React ToDo App with five components: 
+ProjectForm, ProjectTasks (which has a sub-component: ProjectUpdater), Door, Confetti, and Footer. 
+
+The ProjectForm handles user inputs(tasks/projects/schedule) - It receives props from the parent App and adds the tasks.
+The Door component receives no property but used to render the "door" sliding door that shields the App from accidental modification/deletion.
+Confetti is used to render ReactConfetti only
+Footer renders my social icons that links to my social handles
+ProjectTasks receives the tasks/projects and used alongside other helper props from App to handle both task editing and re-adding tasks. The child, ProjectUpdater handles the completion status of projects/tasks - checked or not.
+*/
+
 function App() {
+// get projects from localStorage or return an empty array
   const [projects, setProjects] = useState(JSON.parse(localStorage.getItem("stored-projects")) || [])
 
+// Door closure status - opened or not
   const [opened, setOpened] = useState(false)
   
+  // Store project in the localStorage once there is a new task/project added or edited.
   useEffect((() => localStorage.setItem("stored-projects", JSON.stringify(projects))), [projects])
 
-  
-
-  // This creates a task
+  // This function creates a task - passed down to ProjectForm
   const addProject = (projectName) => {
     return setProjects(prev => [...prev, {project: projectName, completed: false}])
   }
 
-   // This updates a task as completed or not
+   // This updates a task as completed or not. It's passed down to ProjectTasks which passes it down to it's child to handle completion status
   const updatedProject = (projectIndex, completionStatus) => {
     setProjects(prev => {
       const projectsCopy = [...prev];
@@ -37,7 +49,7 @@ function App() {
     })
   }
 
-  // This edits a task
+  // This edits a task. It's handed down to ProjectTasks for editing
   const editProject = ( editedProject, projectIndex) => {
     setProjects(prev => {
       const projectsCopy = [...prev];
@@ -46,6 +58,30 @@ function App() {
       })
   }
 
+  // Function to open the doors: passed down to the Door component
+  const handleOpened = () => {    
+    setOpened(true)
+    { !opened && $(".right-door").addClass("right-open") }
+    { !opened && $(".left-door").addClass("left-open") }
+    // $(".btn-open").hide()
+    $(".btn-close").show()
+    // console.log(opened)
+  }
+
+  // Function to close the doors: passed down to the Door component
+  const handleClosed = () => {
+      // window.location.reload()
+      { opened && $(".right-door").addClass("right-closed") } 
+    { opened && $(".left-door").addClass("left-closed") }
+    // $(".btn-close").hide()
+    $(".btn-open").show()
+    setOpened(false)
+    setTimeout(function(){
+      window.location.reload();
+    }, 4000);
+  }
+
+  // Some constants for normal & conditional rendering
   const numOfProjectsCompleted = projects.filter(proj => proj.completed).length; 
 
   const totalNumOfProjects = projects.length;
@@ -59,27 +95,6 @@ function App() {
           numOfProjectsCompleted > 0 && "Nice! Keep riding higher 🚴‍♀️");
     
   const intro = <p>&quot;What&apos;s your schedule for the day/week/month/year? Add them here and we will help you keep track.&quot;</p>
-  
-  const handleOpened = () => {    
-    setOpened(true)
-    { !opened && $(".right-door").addClass("right-open") }
-    { !opened && $(".left-door").addClass("left-open") }
-    // $(".btn-open").hide()
-    $(".btn-close").show()
-    // console.log(opened)
-  }
-  const handleClosed = () => {
-      // window.location.reload()
-      { opened && $(".right-door").addClass("right-closed") } 
-    { opened && $(".left-door").addClass("left-closed") }
-    // $(".btn-close").hide()
-    $(".btn-open").show()
-    setOpened(false)
-    setTimeout(function(){
-   window.location.reload();
-}, 4000);
-  }
- 
 
   return (
     <div className="container">
