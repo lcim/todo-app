@@ -62,30 +62,28 @@ function App() {
   
   const handleOpened = () => {    
     setOpened(true)
-    { !opened && $(".right-door").addClass("joked") }
-    { !opened && $(".left-door").addClass("jayed") }
+    { !opened && $(".right-door").addClass("right-open") }
+    { !opened && $(".left-door").addClass("left-open") }
     // $(".btn-open").hide()
     $(".btn-close").show()
     // console.log(opened)
   }
   const handleClosed = () => {
       // window.location.reload()
-      { opened && $(".right-door").addClass("unjoked") } 
-    { opened && $(".left-door").addClass("unjayed") }
-    $(".btn-close").hide()
+      { opened && $(".right-door").addClass("right-closed") } 
+    { opened && $(".left-door").addClass("left-closed") }
+    // $(".btn-close").hide()
     $(".btn-open").show()
     setOpened(false)
     setTimeout(function(){
    window.location.reload();
-}, 3900);
+}, 4000);
   }
  
 
   return (
     <div className="container">
       <Door opened={opened} open={() => handleOpened()} close={() => handleClosed()} />
-      {/* <div className="joke" onClick={() => openDoors()}></div>
-      <div className="jay" onClick={() => openDoors()}></div> */}
       
     <main>
       <h1 className="title">Simple Scheduler</h1>
@@ -105,14 +103,10 @@ function App() {
       )}
       </div> 
       { <button className="btn-close" onClick={() => handleClosed()}>Hide schedule
-      </button>}
-      
+      </button>}      
       </main>
       <Footer />
     </div>
   )
 }
-{/* Instead of passing key, project and completed to ProjectTasks, one can simply pass the projects destructured i.e: {...proj} */}
-      
-
 export default App

@@ -63,13 +63,13 @@ body {
     background-color: rgba(72, 33, 33, 0.975);
     color: #EED;
     position: absolute;
-    border-left: 4px solid;
-    left: 0;
+    border-left: 4px solid;/*jjjjj*/
+    left: 0; /* IMPORTANT! the zero reference starts from the flex items' start, it's not from zero of page */
     z-index: 3;
     transition-property: left;
     transition-duration: 3s;
     transition-delay: 1s;
-    transition-timing-function: linear; 
+    transition-timing-function: linear;
     /* or ease */
 }
 .left-door {
@@ -84,21 +84,21 @@ body {
     transition-property: right;
     transition-duration: 3s;
     transition-delay: 1s;
-    transition-timing-function: linear; 
+    transition-timing-function: linear;
     /* or ease */
 }
 
-.joked {
-    left: 50vw;    
+.right-open {
+    left: 50vw;   /* 50vw from the left reference point; not really moving in left direction*/
 }
-.jayed {
-    right: 50vw;    
+.left-open {
+    right: 50vw; /* 50vw from the right reference point; not really moving in rightwards*/
 }
 
-.unjoked {
+.right-closed {
     left: 0;    
 }
-.unjayed {
+.left-closed {
     right: 0;    
 }
 
