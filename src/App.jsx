@@ -77,7 +77,7 @@ function App() {
     setOpened(false)
     setTimeout(function(){
    window.location.reload();
-}, 4000);
+}, 3200);
   }
  
 
