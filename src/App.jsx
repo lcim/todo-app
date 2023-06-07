@@ -63,20 +63,22 @@ function App() {
     setOpened(true)
     { !opened && $(".right-door").addClass("right-open") }
     { !opened && $(".left-door").addClass("left-open") }
-    // $(".btn-open").hide()
-    $(".btn-close").show()
-    // console.log(opened)
+    $(".btn-close").show();
+    $(".btn-open").hide();
+    $(".rt-door").hide();
+    setTimeout(function () {
+    $(".right-door").css({width:0});
+    }, 4000);
   }
 
   // Function to close the doors: passed down to the Door component
   const handleClosed = () => {
-      // window.location.reload()
-      { opened && $(".right-door").addClass("right-closed") } 
+    { opened && $(".right-door").addClass("right-closed") } 
     { opened && $(".left-door").addClass("left-closed") }
-    // $(".btn-close").hide()
-    $(".btn-open").show()
-    setOpened(false)
-    setTimeout(function(){
+    $(".btn-open").show();
+    $(".right-door").css({width: "50vw"});
+    setOpened(false);
+    setTimeout(function () {
       window.location.reload();
     }, 4000);
   }

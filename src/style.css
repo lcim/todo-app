@@ -11,6 +11,14 @@ body {
     height: auto;
     margin: 0;    
 }
+
+.hidden{
+    display: none;
+}
+.visible{
+    display: visible;
+}
+
 /* Box for the two sliding doors, left-door and right-door */
 .door-container {
     display: flex;
@@ -23,6 +31,8 @@ body {
     width: 50vw;
     height: 100vh;
     background-color: rgba(72, 33, 33, 0.975);
+    border-top: 4px solid rgb(244, 175, 175);
+    border-bottom: 4px solid rgb(244, 175, 175);
     color: #EED;
     position: absolute;
     border-left: 4px solid;/*jjjjj*/
@@ -40,6 +50,8 @@ body {
     position: absolute;
     z-index: 3;
     border-right: 4px solid brown;
+    border-top: 4px solid #EED;
+    border-bottom: 4px solid #EED;
     background-color: rgba(72, 33, 33, 0.975);
     color: #EED;
     right: 0;
@@ -53,6 +65,7 @@ body {
 /* Action to open right door */
 .right-open {
     left: 50vw;   /* 50vw from the left reference point; not really moving in left direction*/
+    /* width: 0; */
 }
 /* Action to open left door */
 .left-open {
@@ -69,11 +82,11 @@ body {
 /* The right and left doors paragraph elements */
 .rt-door, .lt-door {
     position: relative;
-    top: 40%;
+    top: 35%;
     font-weight: bolder;
 }
 .lt-door {
-    left: 16vw;
+    right: -54%;
 }
 .rt-door{
     left: min(5%, 50vw);
