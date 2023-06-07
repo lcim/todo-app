@@ -13,7 +13,7 @@ ProjectForm, ProjectTasks (which has a sub-component: ProjectUpdater), Door, Con
 
 The ProjectForm handles user inputs(tasks/projects/schedule) - It receives props from the parent App and adds the tasks.
 The Door component receives no property but used to render the "door" sliding door that shields the App from accidental modification/deletion.
-Confetti is used to render ReactConfetti only
+Confetti is used to render ReactConfetti only.
 Footer renders my social icons that links to my social handles
 ProjectTasks receives the tasks/projects and used alongside other helper props from App to handle both task editing and re-adding tasks. The child, ProjectUpdater handles the completion status of projects/tasks - checked or not.
 */
@@ -101,7 +101,7 @@ function App() {
       <Door opened={opened} open={() => handleOpened()} close={() => handleClosed()} />
       
     <main>
-      <h1 className="title">Simple Scheduler</h1>
+      <h1 className="title">Simple ToDo-App</h1>
       {progress === 100 && <Confetti />}
       <h1 className='task-progress'>{totalNumOfProjects === 0 ? intro : numOfProjectsCompleted + "/" + totalNumOfProjects + ` project${numOfProjectsCompleted < 2 ? "" : "s"} completed`} </h1>
       <h2 className='task-progress-message'>{motivationalMessage}</h2>
