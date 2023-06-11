@@ -20,7 +20,7 @@ ProjectTasks receives the tasks/projects and used alongside other helper props f
 
 function App() {
 // get projects from localStorage or return an empty array
-  const [projects, setProjects] = useState(JSON.parse(localStorage.getItem("stored-projects")) || [])
+  const [projects, setProjects] = useState(JSON.parse(localStorage.getItem("stored-projects")) || []) //try use a separate file for the local storage and explore using react context
 
 // Door closure status - opened or not
   const [opened, setOpened] = useState(false)
@@ -63,7 +63,7 @@ function App() {
     setOpened(true)
     { !opened && $(".right-door").addClass("right-open") }
     { !opened && $(".left-door").addClass("left-open") }
-    $(".btn-close").show();
+    $(".btn-close").show();// try figure out using props sent to the component to determine this
     $(".btn-open").hide();
     $(".rt-door").hide();
     setTimeout(function () {
@@ -76,7 +76,7 @@ function App() {
     { opened && $(".right-door").addClass("right-closed") } 
     { opened && $(".left-door").addClass("left-closed") }
     $(".btn-open").show();
-    $(".right-door").css({width: "50vw"});
+    $(".right-door").css({width: "50vw"}); // avoid using jquery entirely, it always has issues with react, you can google how to do similar with react
     setOpened(false);
     setTimeout(function () {
       window.location.reload();
